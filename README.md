@@ -5,8 +5,8 @@ Two design directions are included so the client can pick one:
 
 | Page | Concept | Vibe |
 |------|---------|------|
-| `index.html` | **A — "Stormproof"** | Bold, dark, cinematic. Big type, live rain hero, high-contrast CTAs. |
-| `concept-b.html` | **B — "Coastal Clean"** | Bright, airy, premium-residential. Photo-forward, soft cards. |
+| `index.html` | **A — "Stormproof"** | Bold, near-black with forest-green accents. Big type, live rain hero, high-contrast CTAs. |
+| `concept-b.html` | **B — "Coastal Clean"** | Light grey, airy, premium-residential. Deep-green headings, photo-forward, soft cards, JEM roofline motif. |
 
 A floating switcher (bottom-right) flips between the two on any device.
 
@@ -32,7 +32,13 @@ See [`assets/img/README.md`](assets/img/README.md) for the full list.
 ## Brand tokens
 
 All colors and fonts live in one place: the `:root` block at the top of `css/base.css`.
-Swap the hex values there and both concepts update.
+The palette is pulled from the JEM logo: forest green `#0F4A17`, sage green `#5A7D55`,
+sage grey `#A9B1A9`, near-black `#0A0F0B`. A brighter green `#2E8B3E` is used only for
+buttons and highlights on dark backgrounds. Swap the hex values there and both concepts update.
+
+The logo in the pages is a placeholder SVG (`assets/logo.svg`) drawn to echo the real mark.
+The original PNG is saved at `assets/img/logo-original.png`; drop the real vector/PNG in
+when you have it and update the inline `<svg>` in the nav and footer of both pages.
 
 ## Contact form
 
