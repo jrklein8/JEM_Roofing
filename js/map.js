@@ -22,15 +22,14 @@
   ];
 
   const map = L.map(el, {
-    zoomControl: false, scrollWheelZoom: false, attributionControl: true,
+    zoomControl: false, scrollWheelZoom: false, attributionControl: false, /* credit lives in the site footer */
     dragging: !L.Browser.mobile, tap: false, zoomSnap: 0.25, zoomDelta: 0.5,
   });
   L.control.zoom({ position: 'bottomright' }).addTo(map);
   map.createPane('radar').style.zIndex = 450; /* above overlays, below pins */
 
   /* Esri World Dark Gray basemap (free to use with attribution) + its label/reference layer */
-  const esriAttr = 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, OpenStreetMap contributors';
-  const base = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { attribution: esriAttr, maxZoom: 16 }).addTo(map);
+  const base = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16 }).addTo(map);
   const ref = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16, pane: 'overlayPane', opacity: .8 }).addTo(map);
 
   /* fallback 1: if Esri tiles fail, switch to OpenStreetMap with a CSS dark filter */
@@ -38,7 +37,7 @@
   base.on('tileerror', () => {
     if (swapped || ++failures < 3) return;
     swapped = true; map.removeLayer(base); map.removeLayer(ref); el.classList.add('map-osm-dark');
-    const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19 }).addTo(map);
+    const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
     let osmFail = 0;
     osm.on('tileerror', () => { if (++osmFail >= 3) { map.removeLayer(osm); el.classList.remove('map-osm-dark'); addSketch(); } });
   });

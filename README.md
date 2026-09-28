@@ -47,3 +47,8 @@ The form posts to Formspree. Replace `YOUR_FORM_ID` in the `<form action="…">`
 ## Previews
 
 Screenshots from the QA pass live in [`previews/`](previews/).
+
+## Cache busting
+
+Stylesheet and script links in `index.html` carry a `?v=N` query string. Bump the number
+whenever you change CSS or JS so phones and browsers fetch the new files instead of a cached copy.
