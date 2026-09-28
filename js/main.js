@@ -6,11 +6,16 @@
 
   /* nav: scroll state + mobile toggle */
   const nav = $('.nav');
+  let contactInView = false;
+  const contact = $('#contact');
+  if (contact) new IntersectionObserver(e => { contactInView = e[0].isIntersecting; onScroll(); }, { threshold: 0.15 }).observe(contact);
   const onScroll = () => {
     if (!nav) return;
     nav.classList.toggle('is-scrolled', window.scrollY > 24);
     const bar = $('.callbar');
     if (bar) bar.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.6);
+    const fab = $('.float-cta');
+    if (fab) fab.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.7 && !contactInView);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

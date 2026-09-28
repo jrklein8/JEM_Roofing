@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/concept-a.css">
   <meta property="og:title" content="JEM Roofing Co. — Wilmington, NC">
@@ -293,29 +294,9 @@
         <li>Wilmington</li><li>Leland</li><li>Carolina Beach</li><li>Southport</li><li>Wrightsville Beach</li><li>Oak Island</li><li>Castle Hayne</li><li>Shallotte</li><li>Hampstead</li><li>Ocean Isle Beach</li><li>Kure Beach</li><li>Boiling Spring Lakes</li>
       </ul>
     </div>
-    <div class="area-map reveal" data-delay="1" aria-hidden="true">
-      <svg viewBox="0 0 400 400">
-        <defs><radialGradient id="mapg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#223124"/><stop offset="1" stop-color="#111812"/></radialGradient></defs>
-        <circle cx="200" cy="200" r="190" fill="url(#mapg)" stroke="rgba(255,255,255,.08)"/>
-        <!-- stylized coastline -->
-        <path d="M60 330 C120 300 150 260 190 250 C230 240 250 200 270 160 C285 130 300 110 340 80" fill="none" stroke="rgba(90,125,85,.6)" stroke-width="3" stroke-dasharray="6 8"/>
-        <path d="M60 330 C120 300 150 260 190 250 C230 240 250 200 270 160 C285 130 300 110 340 80 L360 380 L40 380 Z" fill="rgba(90,125,85,.08)"/>
-        <!-- rings -->
-        <circle class="ring" cx="200" cy="200" r="120" fill="none" stroke="#2E8B3E" stroke-width="2"/>
-        <circle class="ring" cx="200" cy="200" r="120" fill="none" stroke="#2E8B3E" stroke-width="2"/>
-        <circle class="ring" cx="200" cy="200" r="120" fill="none" stroke="#2E8B3E" stroke-width="2"/>
-        <!-- pins -->
-        <g fill="#fff" font-family="Manrope, sans-serif" font-size="11" font-weight="700">
-          <circle cx="200" cy="200" r="7" fill="#2E8B3E"/><text x="212" y="196">Wilmington</text>
-          <circle cx="150" cy="215" r="4" fill="#fff"/><text x="120" y="235">Leland</text>
-          <circle cx="235" cy="270" r="4" fill="#fff"/><text x="215" y="290">Carolina Beach</text>
-          <circle cx="245" cy="180" r="4" fill="#fff"/><text x="256" y="178">Wrightsville</text>
-          <circle cx="170" cy="310" r="4" fill="#fff"/><text x="130" y="330">Southport</text>
-          <circle cx="110" cy="290" r="4" fill="#fff"/><text x="55" y="285">Shallotte</text>
-          <circle cx="255" cy="120" r="4" fill="#fff"/><text x="265" y="118">Hampstead</text>
-          <circle cx="90" cy="335" r="4" fill="#fff"/><text x="45" y="355">Ocean Isle</text>
-        </g>
-      </svg>
+    <div class="area-map reveal" data-delay="1">
+      <div id="area-map" role="img" aria-label="Map of the JEM Roofing service area around Wilmington, NC"></div>
+      <div class="area-map-fade" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -375,10 +356,14 @@
   </div>
 </footer>
 
+<a class="float-cta" href="#contact" aria-label="Get a free quote"><span class="pulse"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Get a Free Quote</a>
+
 <div class="callbar"><a class="btn btn-primary" href="tel:+19104690064">Call Now</a><a class="btn btn-light" href="#contact">Free Quote</a></div>
 
 <nav class="switcher" aria-label="Design concept switcher"><a class="is-active" href="index.html">A · Stormproof</a><a href="concept-b.html">B · Coastal</a></nav>
 
+<script src="assets/vendor/leaflet/leaflet.js"></script>
 <script src="js/main.js"></script>
+<script src="js/map.js"></script>
 </body>
 </html>

@@ -195,7 +195,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---- concept switcher (demo only — remove for launch) ---- */
 .switcher {
-  position: fixed; right: 16px; bottom: 16px; z-index: 200;
+  position: fixed; left: 16px; bottom: 16px; z-index: 200;
   display: flex; gap: 4px; padding: 4px; border-radius: 999px;
   background: rgba(10,15,11,.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,.14); box-shadow: 0 20px 40px -16px rgba(0,0,0,.6);
@@ -204,7 +204,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .switcher a { padding: 10px 16px; border-radius: 999px; color: rgba(255,255,255,.7); }
 .switcher a.is-active { background: var(--accent); color: #fff; }
 .switcher a:hover:not(.is-active) { color: #fff; }
-@media (max-width: 700px) { .switcher { right: 12px; bottom: 86px; font-size: 11px; } .switcher a { padding: 8px 12px; } }
+@media (max-width: 700px) { .switcher { left: 12px; bottom: 86px; font-size: 11px; } .switcher a { padding: 8px 12px; } }
 
 /* ---- mobile sticky call bar ---- */
 .callbar { display: none; }
