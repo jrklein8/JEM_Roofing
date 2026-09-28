@@ -121,7 +121,7 @@ body { background: var(--dark-900); color: #fff; }
 
 /* ---------- storm band ---------- */
 .storm { background: var(--brand); color: #fff; overflow: hidden; position: relative; }
-.storm::before { content: "STORM"; position: absolute; right: -2vw; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: 40vw; line-height: 1; color: rgba(0,0,0,.08); pointer-events: none; letter-spacing: -.02em; }
+.storm::before { content: ""; position: absolute; left: 50%; top: 50%; width: min(120vh, 900px); aspect-ratio: 1; transform: translate(-58%, -50%) rotate(14deg); background: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M13 2 4 14h7l-1 8 9-12h-7z%27 fill=%27%23000%27 fill-opacity=%27.13%27/%3E%3C/svg%3E") center / contain no-repeat; pointer-events: none; }
 .storm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; }
 .storm h2 { font-size: clamp(44px, 6vw, 84px); line-height: .92; }
 .storm .lead { color: rgba(255,255,255,.85); }
@@ -131,7 +131,7 @@ body { background: var(--dark-900); color: #fff; }
 .step::before { counter-increment: step; content: "0" counter(step); font-family: var(--font-display); font-size: 44px; line-height: 1; color: #fff; opacity: .9; }
 .step h3 { font-size: 24px; letter-spacing: .04em; margin-bottom: 4px; }
 .step p { margin: 0; font-size: 15px; opacity: .9; }
-@media (max-width: 900px) { .storm-grid { grid-template-columns: 1fr; } .storm::before { font-size: 60vw; top: 30%; } }
+@media (max-width: 900px) { .storm-grid { grid-template-columns: 1fr; } .storm::before { width: 120vw; top: 30%; transform: translate(-40%, -50%) rotate(14deg); } }
 
 /* ---------- about ---------- */
 .about { background: var(--dark-900); }
