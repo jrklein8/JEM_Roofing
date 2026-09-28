@@ -61,7 +61,7 @@
 
   /* radar pulse: rings expand from HQ until they clear the map edges (sized in CSS from --radar) */
   const radar = L.marker(HQ, {
-    icon: L.divIcon({ className: 'radar', html: '<span></span><span></span><span></span>', iconSize: [0, 0], iconAnchor: [0, 0] }),
+    icon: L.divIcon({ className: 'radar', html: '<i class="sweep"></i><span></span><span></span><span></span>', iconSize: [0, 0], iconAnchor: [0, 0] }),
     interactive: false, keyboard: false, pane: 'radar',
   }).addTo(map);
   const sizeRadar = () => el.style.setProperty('--radar', Math.ceil(2.4 * Math.max(el.clientWidth, el.clientHeight)) + 'px');

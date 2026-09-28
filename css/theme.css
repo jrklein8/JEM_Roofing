@@ -232,6 +232,13 @@ body { background: var(--dark-900); color: #fff; }
 .radar span:nth-child(2) { animation-delay: 2s; }
 .radar span:nth-child(3) { animation-delay: 4s; }
 @keyframes radar { 0% { transform: scale(0); opacity: 1; } 80% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+/* rotating sweep: a soft wedge with a bright leading edge, one revolution per ring cycle */
+.radar .sweep { position: absolute; left: 0; top: 0; width: var(--radar, 1400px); height: var(--radar, 1400px); margin: calc(var(--radar, 1400px) / -2) 0 0 calc(var(--radar, 1400px) / -2);
+  border-radius: 50%; opacity: .85; animation: sweep 6s linear infinite;
+  background: conic-gradient(from 0deg, rgba(46,139,62,0) 0deg, rgba(46,139,62,0) 270deg, rgba(46,139,62,.06) 300deg, rgba(46,139,62,.28) 352deg, rgba(120,220,140,.95) 359deg, rgba(46,139,62,0) 360deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.9) 30%, rgba(0,0,0,.35) 60%, transparent 78%);
+          mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.9) 30%, rgba(0,0,0,.35) 60%, transparent 78%); }
+@keyframes sweep { to { transform: rotate(360deg); } }
 .map-pin-hq { background: var(--accent); box-shadow: 0 0 0 0 rgba(46,139,62,.6); animation: pinPulse 2.2s infinite; }
 @keyframes pinPulse { 0% { box-shadow: 0 0 0 0 rgba(46,139,62,.6); } 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
 .leaflet-tooltip.map-label { background: rgba(10,15,11,.75); color: #fff; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 3px 9px; font-size: 12px; font-weight: 700; letter-spacing: .02em; box-shadow: none; backdrop-filter: blur(4px); }
