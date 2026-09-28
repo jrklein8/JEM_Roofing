@@ -23,14 +23,22 @@
 
   const map = L.map(el, {
     zoomControl: false, scrollWheelZoom: false, attributionControl: true,
-    dragging: !L.Browser.mobile, tap: false,
+    dragging: !L.Browser.mobile, tap: false, zoomSnap: 0.25, zoomDelta: 0.5,
   });
   L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd', maxZoom: 19,
-  }).addTo(map);
+  /* Esri World Dark Gray basemap (free to use with attribution) + its label/reference layer */
+  const esriAttr = 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, OpenStreetMap contributors';
+  const base = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { attribution: esriAttr, maxZoom: 16 }).addTo(map);
+  const ref = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16, pane: 'overlayPane', opacity: .8 }).addTo(map);
+
+  /* fallback: if Esri tiles fail, switch to OpenStreetMap with a CSS dark filter */
+  let failures = 0, swapped = false;
+  base.on('tileerror', () => {
+    if (swapped || ++failures < 3) return;
+    swapped = true; map.removeLayer(base); map.removeLayer(ref); el.classList.add('map-osm-dark');
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19 }).addTo(map);
+  });
 
   /* soft service radius around HQ (~35 mi) */
   L.circle(HQ, { radius: 56000, color: '#2E8B3E', weight: 1.5, opacity: .6, fillColor: '#2E8B3E', fillOpacity: .08, dashArray: '6 8' }).addTo(map);
@@ -44,6 +52,6 @@
     group.push(m);
   });
 
-  map.fitBounds(L.featureGroup(group).getBounds().pad(0.08));
+  map.fitBounds(L.featureGroup(group).getBounds(), { padding: [36, 36] });
   window.addEventListener('resize', () => map.invalidateSize());
 })();
