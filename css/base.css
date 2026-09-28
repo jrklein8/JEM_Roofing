@@ -165,6 +165,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---- forms ---- */
 .form { display: grid; gap: 14px; }
+.form-fields { display: grid; gap: 16px; }
 .form-row { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
 .field { display: grid; gap: 6px; }
@@ -177,7 +178,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,.4); }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,.1); box-shadow: 0 0 0 4px rgba(46,139,62,.18); }
 .field textarea { min-height: 130px; resize: vertical; }
-.form-note { font-size: 13px; opacity: .6; }
+.form-fields > .btn { margin-top: 12px; justify-self: start; }
+.form-note { font-size: 13px; opacity: .6; margin-top: 4px; }
 .form-success { display: none; padding: 20px; border-radius: var(--radius-sm); background: rgba(52,199,89,.15); border: 1px solid rgba(52,199,89,.5); }
 .form.is-sent .form-success { display: block; }
 .form.is-sent .form-fields { display: none; }
