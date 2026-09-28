@@ -4,8 +4,7 @@ Drop files here with these exact names. Any missing file falls back gracefully.
 
 | File | Used for | Suggested |
 |------|----------|-----------|
-| `hero.jpg` | Hero background (both concepts) | Wide shot of a finished roof / crew on a roof, 2400×1400+ |
-| `hero-b.jpg` | Concept B hero (optional; falls back to `hero.jpg`) | Bright daytime residential roof |
+| `hero.jpg` | Hero background | Wide shot of a finished roof / crew on a roof, 2400×1400+ |
 | `residential.jpg` | Residential roofing card | Completed shingle or metal roof on a home |
 | `commercial.jpg` | Commercial roofing card | Flat / TPO / metal commercial roof |
 | `storm.jpg` | Storm damage card | Tarp, damaged shingles, or crew after a storm |
@@ -13,7 +12,7 @@ Drop files here with these exact names. Any missing file falls back gracefully.
 | `team-john.jpg` | John Choufani | Headshot, square crop |
 | `team-elias.jpg` | Elias Choufani | Headshot, square crop |
 | `team-michael.jpg` | Michael Choufani | Headshot, square crop |
-| `gallery-1.jpg` … `gallery-6.jpg` | Project gallery | Before/after and finished work |
+| `gallery-1.jpg` / `gallery-2.jpg` | Before / after slider | One damaged-roof shot, one finished-roof shot, same framing if possible |
 | `logo.png` | Logo | Already in place |
 
 Tip: on the Squarespace site, right-click an image → "Open image in new tab" → strip the

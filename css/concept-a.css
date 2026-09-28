@@ -1,5 +1,5 @@
 /* =========================================================
-   Concept A — "Stormproof": bold, dark, cinematic
+   "Stormproof" theme: bold, dark, cinematic
    ========================================================= */
 body.concept-a { background: var(--dark-900); color: #fff; }
 .concept-a .lead { color: rgba(255,255,255,.7); }
