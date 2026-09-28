@@ -201,9 +201,8 @@ body { background: var(--dark-900); color: #fff; }
 .reviews { background: var(--dark-900); }
 .rating { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
 .stars { color: #FFB800; letter-spacing: 2px; font-size: 20px; }
-.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
 .review { padding: 28px; border-radius: var(--radius); background: var(--dark-800); border: 1px solid rgba(255,255,255,.1); position: relative; }
-.review .sample { position: absolute; top: 14px; right: 14px; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; padding: 4px 8px; border-radius: 6px; background: rgba(255,184,0,.15); color: #FFB800; border: 1px solid rgba(255,184,0,.4); }
 .review p { color: rgba(255,255,255,.8); font-size: 16px; margin: 14px 0 18px; }
 .review .who { display: flex; align-items: center; gap: 12px; font-size: 14px; }
 .review .who b { display: block; }
