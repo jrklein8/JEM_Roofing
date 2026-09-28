@@ -69,7 +69,10 @@
 
   const pin = (hq) => L.divIcon({ className: 'map-pin' + (hq ? ' map-pin-hq' : ''), iconSize: hq ? [18, 18] : [10, 10], iconAnchor: hq ? [9, 9] : [5, 5] });
   const offsets = { top: [0, -10], bottom: [0, 10], left: [-8, 0], right: [8, 0] };
+  const small = el.clientWidth < 520;
+  const hoverOnlyOnSmall = ['Castle Hayne', 'Boiling Spring Lakes'];
   towns.forEach(([name, lat, lng, dir, hq]) => {
+    if (small && hoverOnlyOnSmall.includes(name)) dir = null;
     const m = L.marker([lat, lng], { icon: pin(hq), keyboard: false }).addTo(map);
     m.bindTooltip(name, { permanent: !!dir, direction: dir || 'top', offset: dir ? offsets[dir] : [0, -8], className: 'map-label' + (hq ? ' map-label-hq' : '') });
   });

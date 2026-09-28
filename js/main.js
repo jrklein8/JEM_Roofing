@@ -97,6 +97,20 @@
     });
   });
 
+  /* reviews carousel (mobile): arrows + dots drive the scroll-snap track */
+  $$('.review-track').forEach(track => {
+    const grid = $('.review-grid', track); const cards = $$('.review', grid); const dots = $('.review-dots', track);
+    if (!grid || cards.length < 2) return;
+    cards.forEach((_, i) => { const d = document.createElement('i'); if (i === 0) d.classList.add('is-active'); dots.appendChild(d); });
+    const index = () => { const x = grid.scrollLeft + grid.clientWidth / 2; let best = 0, dist = Infinity; cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - x); if (d < dist) { dist = d; best = i; } }); return best; };
+    const sync = () => $$('i', dots).forEach((d, i) => d.classList.toggle('is-active', i === index()));
+    grid.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    $$('.review-btn', track).forEach(btn => btn.addEventListener('click', () => {
+      const next = Math.max(0, Math.min(cards.length - 1, index() + Number(btn.dataset.dir)));
+      const c = cards[next]; grid.scrollTo({ left: c.offsetLeft - (grid.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' });
+    }));
+  });
+
   /* year */
   $$('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
