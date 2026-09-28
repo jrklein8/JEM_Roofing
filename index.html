@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/concept-a.css">
+  <link rel="stylesheet" href="css/theme.css">
   <meta property="og:title" content="JEM Roofing Co. — Wilmington, NC">
   <meta property="og:description" content="Family-owned. Licensed & insured. 30+ years of experience. Free quotes.">
   <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
    "areaServed":["New Hanover County, NC","Brunswick County, NC","Wilmington, NC"],"url":"https://www.jemroofingco.com/"}
   </script>
 </head>
-<body class="concept-a">
+<body>
 
 <!-- ================= NAV ================= -->
 <header class="nav">
@@ -32,10 +32,10 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#services">Services</a>
-      <a href="#storm">Storm Damage</a>
-      <a href="#about">About</a>
       <a href="#work">Our Work</a>
+      <a href="#storm">Storm Damage</a>
       <a href="#area">Service Area</a>
+      <a href="#about">About</a>
       <a class="btn btn-primary" href="#contact">Free Quote</a>
     </nav>
     <div class="nav-cta">
@@ -154,6 +154,48 @@
   </div>
 </section>
 
+<!-- ================= BEFORE / AFTER ================= -->
+<section class="section ba-section" id="work">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal"><div class="eyebrow">Our work</div><h2 class="display">Drag to see <em>the difference.</em></h2></div>
+      <p class="lead reveal" data-delay="1">Every roof we touch gets documented before and after. Drag the handle to see what a JEM roof does for a home.</p>
+    <!-- Swap gallery-1.jpg (before) and gallery-2.jpg (after) in assets/img/ for a real job. -->
+    </div>
+    <div class="ba reveal" data-ba>
+      <div class="photo before">
+        <img src="assets/img/gallery-1.jpg" alt="Before: storm-damaged roof">
+        <svg class="roofsvg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M40 260 400 60l360 200"/><path d="M110 260v100h580V260"/><path d="M180 200l20 60M330 130l-10 90M520 150l30 50M600 220l40-8" stroke-width="5" stroke-linecap="round"/></g></svg>
+      </div>
+      <div class="photo after">
+        <img src="assets/img/gallery-2.jpg" alt="After: new JEM roof">
+        <svg class="roofsvg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M40 260 400 60l360 200"/><path d="M110 260v100h580V260"/><path d="M160 200h480M220 170h360M280 140h240M340 110h120" stroke-width="2"/></g></svg>
+      </div>
+      <div class="handle"></div>
+      <span class="tag l">Before</span><span class="tag r">After</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="section why">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal"><div class="eyebrow">Why JEM</div><h2 class="display" style="color:var(--dark-900)">Why homeowners<br>choose <em style="color:var(--accent)">us</em></h2></div>
+      <p class="lead reveal" data-delay="1">Plenty of trucks say "roofing" on the side. Here's what's different when ours pulls up.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="display">Licensed &amp; insured</h3><p>Fully licensed general contractor on every job. Your home and our crew are covered, always.</p></div>
+      <div class="why-card reveal" data-delay="1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3 class="display">Fast &amp; on schedule</h3><p>We quote a date and hit it. Most residential replacements finish in a day or two.</p></div>
+      <div class="why-card reveal" data-delay="2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div><h3 class="display">Insurance-savvy</h3><p>Storm claims are a language. We speak it, document it, and meet your adjuster on the roof.</p></div>
+      <div class="why-card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3 class="display">Our own crew</h3><p>Family-run and hands-on. The people who quote your roof are the people who stand behind it.</p></div>
+      <div class="why-card reveal" data-delay="1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div><h3 class="display">Built for the coast</h3><p>Wind-rated materials and installs designed for salt air, humidity, and hurricane season.</p></div>
+      <div class="why-card reveal" data-delay="2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div><h3 class="display">Personal touch</h3><p>Top-notch service with a personal touch is the whole point of being local and family-owned.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= STORM ================= -->
 <section class="section storm" id="storm">
   <div class="container storm-grid">
@@ -168,6 +210,43 @@
       <div class="step"><div><h3 class="display">We inspect &amp; secure</h3><p>Full roof assessment with photos. Emergency tarping to stop further damage if needed.</p></div></div>
       <div class="step"><div><h3 class="display">We handle the claim</h3><p>Detailed documentation and a scope of work your adjuster can act on. We meet them on site.</p></div></div>
       <div class="step"><div><h3 class="display">We rebuild it right</h3><p>Repair or full replacement with quality materials, done by our own crew, backed by our word.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section reviews">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal">
+        <div class="eyebrow">Reviews</div>
+        <div class="rating"><span class="stars">★★★★★</span><b>5.0 on Google</b></div>
+        <h2 class="display">Neighbors <em>talk.</em></h2>
+      </div>
+      <p class="lead reveal" data-delay="1">These three are sample cards. Drop in real Google or Facebook reviews and they'll look exactly like this.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review reveal"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>"After the storm we had three companies come out. JEM was the only one who actually got on the roof, took photos, and explained what the insurance company would need."</p><div class="who"><div class="avatar">HO</div><div><b>Homeowner</b><small>Leland, NC</small></div></div></div>
+      <div class="review reveal" data-delay="1"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>"Crew showed up on the day they said, finished in a day and a half, and the yard was cleaner than when they arrived. Roof looks incredible."</p><div class="who"><div class="avatar">HO</div><div><b>Homeowner</b><small>Wilmington, NC</small></div></div></div>
+      <div class="review reveal" data-delay="2"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>"Honest quote, no upsell, and they answered every call. That's rare. We've already recommended them to two neighbors."</p><div class="who"><div class="avatar">HO</div><div><b>Homeowner</b><small>Southport, NC</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE AREA ================= -->
+<section class="section area" id="area">
+  <div class="container area-grid">
+    <div class="reveal">
+      <div class="eyebrow">Service area</div>
+      <h2 class="display" style="font-size:clamp(42px,5.5vw,80px);line-height:.92;margin-bottom:16px">New Hanover.<br>Brunswick.<br><em style="font-style:normal;color:var(--accent)">And beyond.</em></h2>
+      <p class="lead">Based in Wilmington and on the road across the Cape Fear region every day.</p>
+      <ul class="area-list">
+        <li>Wilmington</li><li>Leland</li><li>Carolina Beach</li><li>Southport</li><li>Wrightsville Beach</li><li>Oak Island</li><li>Castle Hayne</li><li>Shallotte</li><li>Hampstead</li><li>Ocean Isle Beach</li><li>Kure Beach</li><li>Boiling Spring Lakes</li>
+      </ul>
+    </div>
+    <div class="area-map reveal" data-delay="1">
+      <div id="area-map" role="img" aria-label="Map of the JEM Roofing service area around Wilmington, NC"></div>
+      <div class="area-map-fade" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -216,84 +295,6 @@
         <div class="member-body"><h3 class="display">Michael Choufani</h3><div class="role">Co-Founder · Customer Relations</div>
           <p>Five years in sales and a commitment to excellence that keeps our reputation for reliability intact. Michael is your point of contact from first call to final walkthrough.</p></div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WHY ================= -->
-<section class="section why">
-  <div class="container">
-    <div class="section-head">
-      <div class="reveal"><div class="eyebrow">Why JEM</div><h2 class="display" style="color:var(--dark-900)">Why homeowners<br>choose <em style="color:var(--accent)">us</em></h2></div>
-      <p class="lead reveal" data-delay="1">Plenty of trucks say "roofing" on the side. Here's what's different when ours pulls up.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="display">Licensed &amp; insured</h3><p>Fully licensed general contractor on every job. Your home and our crew are covered, always.</p></div>
-      <div class="why-card reveal" data-delay="1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3 class="display">Fast &amp; on schedule</h3><p>We quote a date and hit it. Most residential replacements finish in a day or two.</p></div>
-      <div class="why-card reveal" data-delay="2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div><h3 class="display">Insurance-savvy</h3><p>Storm claims are a language. We speak it, document it, and meet your adjuster on the roof.</p></div>
-      <div class="why-card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3 class="display">Our own crew</h3><p>Family-run and hands-on. The people who quote your roof are the people who stand behind it.</p></div>
-      <div class="why-card reveal" data-delay="1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div><h3 class="display">Built for the coast</h3><p>Wind-rated materials and installs designed for salt air, humidity, and hurricane season.</p></div>
-      <div class="why-card reveal" data-delay="2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div><h3 class="display">Personal touch</h3><p>Top-notch service with a personal touch is the whole point of being local and family-owned.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BEFORE / AFTER ================= -->
-<section class="section ba-section" id="work">
-  <div class="container">
-    <div class="section-head">
-      <div class="reveal"><div class="eyebrow">Our work</div><h2 class="display">Drag to see <em>the difference.</em></h2></div>
-      <p class="lead reveal" data-delay="1">Swap in real before/after shots from the job. This slider works with any two photos.</p>
-    </div>
-    <div class="ba reveal" data-ba>
-      <div class="photo before">
-        <img src="assets/img/gallery-1.jpg" alt="Before: storm-damaged roof">
-        <svg class="roofsvg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M40 260 400 60l360 200"/><path d="M110 260v100h580V260"/><path d="M180 200l20 60M330 130l-10 90M520 150l30 50M600 220l40-8" stroke-width="5" stroke-linecap="round"/></g></svg>
-      </div>
-      <div class="photo after">
-        <img src="assets/img/gallery-2.jpg" alt="After: new JEM roof">
-        <svg class="roofsvg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M40 260 400 60l360 200"/><path d="M110 260v100h580V260"/><path d="M160 200h480M220 170h360M280 140h240M340 110h120" stroke-width="2"/></g></svg>
-      </div>
-      <div class="handle"></div>
-      <span class="tag l">Before</span><span class="tag r">After</span>
-      <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
-    </div>
-  </div>
-</section>
-
-<!-- ================= REVIEWS ================= -->
-<section class="section reviews">
-  <div class="container">
-    <div class="section-head">
-      <div class="reveal">
-        <div class="eyebrow">Reviews</div>
-        <div class="rating"><span class="stars">★★★★★</span><b>5.0 on Google</b></div>
-        <h2 class="display">Neighbors <em>talk.</em></h2>
-      </div>
-      <p class="lead reveal" data-delay="1">These three are sample cards. Drop in real Google or Facebook reviews and they'll look exactly like this.</p>
-    </div>
-    <div class="review-grid">
-      <div class="review reveal"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>"After the storm we had three companies come out. JEM was the only one who actually got on the roof, took photos, and explained what the insurance company would need."</p><div class="who"><div class="avatar">HO</div><div><b>Homeowner</b><small>Leland, NC</small></div></div></div>
-      <div class="review reveal" data-delay="1"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>"Crew showed up on the day they said, finished in a day and a half, and the yard was cleaner than when they arrived. Roof looks incredible."</p><div class="who"><div class="avatar">HO</div><div><b>Homeowner</b><small>Wilmington, NC</small></div></div></div>
-      <div class="review reveal" data-delay="2"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>"Honest quote, no upsell, and they answered every call. That's rare. We've already recommended them to two neighbors."</p><div class="who"><div class="avatar">HO</div><div><b>Homeowner</b><small>Southport, NC</small></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SERVICE AREA ================= -->
-<section class="section area" id="area">
-  <div class="container area-grid">
-    <div class="reveal">
-      <div class="eyebrow">Service area</div>
-      <h2 class="display" style="font-size:clamp(42px,5.5vw,80px);line-height:.92;margin-bottom:16px">New Hanover.<br>Brunswick.<br><em style="font-style:normal;color:var(--accent)">And beyond.</em></h2>
-      <p class="lead">Based in Wilmington and on the road across the Cape Fear region every day.</p>
-      <ul class="area-list">
-        <li>Wilmington</li><li>Leland</li><li>Carolina Beach</li><li>Southport</li><li>Wrightsville Beach</li><li>Oak Island</li><li>Castle Hayne</li><li>Shallotte</li><li>Hampstead</li><li>Ocean Isle Beach</li><li>Kure Beach</li><li>Boiling Spring Lakes</li>
-      </ul>
-    </div>
-    <div class="area-map reveal" data-delay="1">
-      <div id="area-map" role="img" aria-label="Map of the JEM Roofing service area around Wilmington, NC"></div>
-      <div class="area-map-fade" aria-hidden="true"></div>
     </div>
   </div>
 </section>

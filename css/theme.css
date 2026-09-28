@@ -1,8 +1,8 @@
 /* =========================================================
    "Stormproof" theme: bold, dark, cinematic
    ========================================================= */
-body.concept-a { background: var(--dark-900); color: #fff; }
-.concept-a .lead { color: rgba(255,255,255,.7); }
+body { background: var(--dark-900); color: #fff; }
+.lead { color: rgba(255,255,255,.7); }
 
 /* ---------- hero ---------- */
 .hero {
@@ -134,7 +134,7 @@ body.concept-a { background: var(--dark-900); color: #fff; }
 @media (max-width: 900px) { .storm-grid { grid-template-columns: 1fr; } .storm::before { font-size: 60vw; top: 30%; } }
 
 /* ---------- about ---------- */
-.about { background: var(--dark-800); }
+.about { background: var(--dark-900); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .about h2 { font-size: clamp(42px, 5.5vw, 80px); line-height: .92; margin-bottom: 20px; }
 .about h2 em { font-style: normal; color: var(--accent); }
@@ -152,7 +152,7 @@ body.concept-a { background: var(--dark-900); color: #fff; }
 @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } .about-chip { left: 16px; } }
 
 /* ---------- team ---------- */
-.team { background: var(--dark-900); }
+.team { background: var(--dark-800); }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .member { border-radius: var(--radius); overflow: hidden; background: var(--dark-800); border: 1px solid rgba(255,255,255,.1); transition: transform .35s var(--ease), border-color .35s; }
 .member:hover { transform: translateY(-6px); border-color: rgba(46,139,62,.6); }
@@ -268,5 +268,5 @@ body.concept-a { background: var(--dark-900); color: #fff; }
 .contact-form > p { color: rgba(255,255,255,.6); font-size: 14px; margin-bottom: 22px; }
 @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } .contact-form { padding: 24px; } }
 
-/* ---------- concept-a nav flavor ---------- */
-.concept-a .nav-brand { color: #fff; }
+/* ---------- nav ---------- */
+.nav-brand { color: #fff; }
