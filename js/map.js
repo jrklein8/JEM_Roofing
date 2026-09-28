@@ -14,10 +14,10 @@
     ['Kure Beach', 33.9932, -77.9072, null],
     ['Southport', 33.9215, -78.0203, 'right'],
     ['Oak Island', 33.9166, -78.1611, 'bottom'],
-    ['Boiling Spring Lakes', 34.0313, -78.0672, null],
+    ['Boiling Spring Lakes', 34.0313, -78.0672, 'left'],
     ['Shallotte', 33.9738, -78.3861, 'left'],
     ['Ocean Isle Beach', 33.8935, -78.4267, 'bottom'],
-    ['Castle Hayne', 34.3557, -77.9003, null],
+    ['Castle Hayne', 34.3557, -77.9003, 'left'],
     ['Hampstead', 34.3677, -77.7105, 'right'],
   ];
 
