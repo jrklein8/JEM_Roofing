@@ -36,9 +36,8 @@ The palette is pulled from the JEM logo: forest green `#0F4A17`, sage green `#5A
 sage grey `#A9B1A9`, near-black `#0A0F0B`. A brighter green `#2E8B3E` is used only for
 buttons and highlights on dark backgrounds. Swap the hex values there and both concepts update.
 
-The logo in the pages is a placeholder SVG (`assets/logo.svg`) drawn to echo the real mark.
-The original PNG is saved at `assets/img/logo-original.png`; drop the real vector/PNG in
-when you have it and update the inline `<svg>` in the nav and footer of both pages.
+The real logo is `assets/img/logo.png`. Its built-in white outline lets it sit on both the
+light and dark backgrounds, so the same file is used everywhere.
 
 ## Contact form
 

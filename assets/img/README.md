@@ -14,7 +14,7 @@ Drop files here with these exact names. Any missing file falls back gracefully.
 | `team-elias.jpg` | Elias Choufani | Headshot, square crop |
 | `team-michael.jpg` | Michael Choufani | Headshot, square crop |
 | `gallery-1.jpg` … `gallery-6.jpg` | Project gallery | Before/after and finished work |
-| `logo.png` | Real logo (optional) | Transparent PNG or SVG. Replaces the placeholder wordmark in `assets/logo.svg` |
+| `logo.png` | Logo | Already in place |
 
 Tip: on the Squarespace site, right-click an image → "Open image in new tab" → strip the
 `?format=…` query string to get the full-resolution file.
