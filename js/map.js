@@ -26,6 +26,7 @@
     dragging: !L.Browser.mobile, tap: false, zoomSnap: 0.25, zoomDelta: 0.5,
   });
   L.control.zoom({ position: 'bottomright' }).addTo(map);
+  map.createPane('radar').style.zIndex = 450; /* above overlays, below pins */
 
   /* Esri World Dark Gray basemap (free to use with attribution) + its label/reference layer */
   const esriAttr = 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, OpenStreetMap contributors';
@@ -58,18 +59,22 @@
     note.addTo(map);
   }
 
-  /* soft service radius around HQ (~35 mi) */
-  L.circle(HQ, { radius: 56000, color: '#2E8B3E', weight: 1.5, opacity: .6, fillColor: '#2E8B3E', fillOpacity: .08, dashArray: '6 8' }).addTo(map);
+  /* radar pulse: rings expand from HQ until they clear the map edges (sized in CSS from --radar) */
+  const radar = L.marker(HQ, {
+    icon: L.divIcon({ className: 'radar', html: '<span></span><span></span><span></span>', iconSize: [0, 0], iconAnchor: [0, 0] }),
+    interactive: false, keyboard: false, pane: 'radar',
+  }).addTo(map);
+  const sizeRadar = () => el.style.setProperty('--radar', Math.ceil(2.4 * Math.max(el.clientWidth, el.clientHeight)) + 'px');
+  sizeRadar();
 
   const pin = (hq) => L.divIcon({ className: 'map-pin' + (hq ? ' map-pin-hq' : ''), iconSize: hq ? [18, 18] : [10, 10], iconAnchor: hq ? [9, 9] : [5, 5] });
-  const group = [];
   const offsets = { top: [0, -10], bottom: [0, 10], left: [-8, 0], right: [8, 0] };
   towns.forEach(([name, lat, lng, dir, hq]) => {
     const m = L.marker([lat, lng], { icon: pin(hq), keyboard: false }).addTo(map);
     m.bindTooltip(name, { permanent: !!dir, direction: dir || 'top', offset: dir ? offsets[dir] : [0, -8], className: 'map-label' + (hq ? ' map-label-hq' : '') });
-    group.push(m);
   });
 
-  map.fitBounds(L.featureGroup(group).getBounds(), { padding: [36, 36] });
-  window.addEventListener('resize', () => map.invalidateSize());
+  /* centered on Wilmington; a touch wider on small screens so the beach towns stay in frame */
+  map.setView(HQ, el.clientWidth < 520 ? 8.5 : 9);
+  window.addEventListener('resize', () => { map.invalidateSize(); sizeRadar(); });
 })();
