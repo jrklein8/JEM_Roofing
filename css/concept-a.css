@@ -139,9 +139,9 @@ body.concept-a { background: var(--dark-900); color: #fff; }
 .about h2 { font-size: clamp(42px, 5.5vw, 80px); line-height: .92; margin-bottom: 20px; }
 .about h2 em { font-style: normal; color: var(--accent); }
 .about-visual { position: relative; }
-.about-visual .photo { aspect-ratio: 4 / 5; border-radius: var(--radius); }
-.about-visual .photo img { opacity: .9; }
-.about-chip { position: absolute; left: -24px; bottom: 40px; padding: 18px 22px; border-radius: 14px; background: #fff; color: var(--dark-900); box-shadow: 0 30px 60px -20px rgba(0,0,0,.6); max-width: 240px; }
+.about-visual .photo { aspect-ratio: 5 / 4; border-radius: var(--radius); }
+.about-visual .photo img { opacity: 1; }
+.about-chip { position: absolute; left: -24px; bottom: -28px; padding: 18px 22px; border-radius: 14px; background: #fff; color: var(--dark-900); box-shadow: 0 30px 60px -20px rgba(0,0,0,.6); max-width: 240px; }
 .about-chip .display { font-size: 42px; line-height: 1; color: var(--brand); }
 .about-chip p { margin: 4px 0 0; font-size: 13px; font-weight: 700; color: var(--muted); }
 .jem { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 32px; }
@@ -223,6 +223,8 @@ body.concept-a { background: var(--dark-900); color: #fff; }
 .leaflet-container { font-family: var(--font-body); }
 .leaflet-container .leaflet-tile-pane { filter: saturate(.7) brightness(.9); }
 .map-osm-dark .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.75) contrast(1.05) saturate(.5); }
+.map-sketch { background: #16211a; }
+.map-note { margin: 12px; padding: 6px 10px; border-radius: 8px; background: rgba(10,15,11,.75); color: rgba(255,255,255,.6); font-size: 11px; font-weight: 700; letter-spacing: .04em; border: 1px solid rgba(255,255,255,.1); }
 .map-pin { background: #fff; border-radius: 50%; box-shadow: 0 0 0 3px rgba(255,255,255,.18); }
 .map-pin-hq { background: var(--accent); box-shadow: 0 0 0 0 rgba(46,139,62,.6); animation: pinPulse 2.2s infinite; }
 @keyframes pinPulse { 0% { box-shadow: 0 0 0 0 rgba(46,139,62,.6); } 70% { box-shadow: 0 0 0 14px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
