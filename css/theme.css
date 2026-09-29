@@ -37,9 +37,7 @@ body { background: var(--dark-900); color: #fff; }
 .hero-roof .roof-flash { position: absolute; inset: 0; opacity: 0; filter: brightness(0) invert(1); animation: roofFlash 11s infinite; }
 @keyframes roofBase { 0%, 92.5%, 94.6%, 100% { filter: saturate(.7) brightness(.8); } 93% { filter: saturate(1) brightness(1.6); } 94% { filter: saturate(.9) brightness(1.2); } }
 @keyframes roofFlash { 0%, 92.5%, 94.8%, 100% { opacity: 0; } 93% { opacity: .35; } 94% { opacity: .12; } }
-/* frosted backdrop on the outlined hero button so it stays legible over the roofs */
-.hero-actions .btn-ghost { background: rgba(10,15,11,.45); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.hero-actions .btn-ghost:hover { background: rgba(10,15,11,.6); }
+
 /* big hip roof seen from below: sits behind the rain, ridge lights up on the same 11s lightning cycle */
 
 .hero-grid { display: grid; grid-template-columns: 1.3fr .8fr; gap: 40px; align-items: end; }
@@ -335,6 +333,5 @@ body { background: var(--dark-900); color: #fff; }
 @media (max-width: 900px) {
   .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .hero-actions .btn { padding: 16px 10px; font-size: 14px; letter-spacing: 0; }
-  .hero-actions .btn svg { display: none; }
   .hero-side { margin-top: 260px; }                    /* leaves the pinned roofs clear on first load */
 }
