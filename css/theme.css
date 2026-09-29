@@ -36,7 +36,7 @@ body { background: var(--dark-900); color: #fff; }
 /* shingle lay: each word drops from above and settles, left to right, per line */
 .hero h1 .line.lay { overflow: visible; }
 .hero h1 .line.lay .w { display: inline-block; opacity: 0; transform: translateY(-.55em) rotate(-2deg); transform-origin: left bottom;
-  animation: lay .85s cubic-bezier(.2,.9,.3,1.25) forwards; animation-delay: calc(var(--d) + var(--k) * .17s); }
+  animation: lay 1.05s cubic-bezier(.2,.9,.3,1.25) forwards; animation-delay: calc(var(--d) + var(--k) * .17s); }
 @keyframes lay { 0% { opacity: 0; transform: translateY(-.55em) rotate(-2deg); } 55% { opacity: 1; } 78% { transform: translateY(.04em) rotate(.4deg); } 100% { opacity: 1; transform: none; } }
 .hero h1 .line.lay:nth-child(3) .w { animation-duration: 1.25s; animation-delay: calc(var(--d) + var(--k) * .26s); }   /* DONE RIGHT lays a touch slower */
 @media (prefers-reduced-motion: reduce) { .hero h1 .line.lay .w { animation: none; opacity: 1; transform: none; } }
