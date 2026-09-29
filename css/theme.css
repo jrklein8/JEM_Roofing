@@ -328,6 +328,7 @@ body { background: var(--dark-900); color: #fff; }
 @media (max-width: 900px) {
   .hero-badge { display: none; }                       /* licensed & insured is covered by the stats strip, Why card and footer */
   .hero { padding-bottom: 150px; }                     /* room for the roofs under the cards */
-  .hero-roof { width: 150%; opacity: .9; }
+  .hero-roof { width: 150%; opacity: .85; }
+  .hero-roof.is-pinned { position: fixed; bottom: 0; }   /* rides the bottom of the screen until the hero ends */
 }
 @media (max-width: 560px) { .hero-roof { width: 190%; } .hero { padding-bottom: 170px; } }

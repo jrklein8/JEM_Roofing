@@ -14,10 +14,16 @@
     nav.classList.toggle('is-scrolled', window.scrollY > 24);
     const bar = $('.callbar');
     if (bar) bar.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.6);
+    const roof = $('.hero-roof'); const hero = $('.hero');
+    if (roof && hero) {
+      const pin = window.innerWidth <= 900 && hero.getBoundingClientRect().bottom > window.innerHeight;
+      roof.classList.toggle('is-pinned', pin);
+    }
     const fab = $('.float-cta');
     if (fab) fab.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.7 && !contactInView);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
   onScroll();
   const toggle = $('.nav-toggle');
   if (toggle && nav) {
