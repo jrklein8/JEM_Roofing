@@ -30,6 +30,12 @@ body { background: var(--dark-900); color: #fff; }
 @keyframes rainFall2 { to { background-position: 0 480px; } }
 .lightning { position: absolute; inset: 0; z-index: -1; background: #fff; opacity: 0; pointer-events: none; animation: flash 11s infinite; }
 @keyframes flash { 0%, 92.5%, 93.5%, 94.2%, 100% { opacity: 0; } 93% { opacity: .18; } 94% { opacity: .08; } }
+/* page-load sequence: rain + roofs first, then the copy enters top to bottom */
+.hero-enter { opacity: 0; transform: translateY(26px); animation: heroIn .9s var(--ease) forwards; animation-delay: calc(1.1s + var(--i, 0) * .16s); }
+.hero-grid > aside.hero-enter { --i: 6; }
+@keyframes heroIn { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .hero-enter { animation: none; opacity: 1; transform: none; } }
+
 /* the three roofs from the JEM logo, behind the rain; the white copy flashes with the lightning */
 .hero-roof { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: min(78vw, 1150px); z-index: -2; pointer-events: none; }
 .hero-roof img { display: block; width: 100%; height: auto; }
@@ -51,9 +57,7 @@ body { background: var(--dark-900); color: #fff; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--accent-glow); } 70% { box-shadow: 0 0 0 12px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
 .hero h1 { font-size: clamp(52px, 8.2vw, 124px); line-height: .9; letter-spacing: .005em; }
 .hero h1 .line { display: block; overflow: hidden; }
-.hero h1 .line span { display: inline-block; transform: translateY(110%); animation: rise 1s var(--ease) forwards; }
-.hero h1 .line:nth-child(2) span { animation-delay: .12s; }
-.hero h1 .line:nth-child(3) span { animation-delay: .24s; }
+.hero h1 .line span { display: inline-block; }
 .hero h1 .accent { color: var(--accent); -webkit-text-stroke: 0; }
 .hero h1 .outline { color: transparent; -webkit-text-stroke: 2px rgba(255,255,255,.9); }
 @keyframes rise { to { transform: none; } }
@@ -335,6 +339,7 @@ body { background: var(--dark-900); color: #fff; }
   .hero-actions .btn { padding: 16px 10px; font-size: 14px; letter-spacing: 0; }
   /* cards start hidden below the fold and rise in on first scroll/touch or after a few seconds */
   .hero-side { margin-top: 24px; }
+  .hero-side.hero-enter { animation: none; opacity: 1; transform: none; }   /* mobile uses the fly-in instead */
   .hero-side .hero-card { transform: translateY(140vh); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
   .hero-side .hero-card:nth-child(2) { transition-delay: .12s; }
   .hero-side.is-in .hero-card { transform: none; }
