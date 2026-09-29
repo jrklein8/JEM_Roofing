@@ -31,13 +31,16 @@ body { background: var(--dark-900); color: #fff; }
 .lightning { position: absolute; inset: 0; z-index: -1; background: #fff; opacity: 0; pointer-events: none; animation: flash 11s infinite; }
 @keyframes flash { 0%, 92.5%, 93.5%, 94.2%, 100% { opacity: 0; } 93% { opacity: .18; } 94% { opacity: .08; } }
 /* the three roofs from the JEM logo, behind the rain; the white copy flashes with the lightning */
-.hero-roof { position: absolute; right: 0; bottom: 0; width: min(76vw, 1100px); z-index: -2; pointer-events: none; }
+.hero-roof { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: min(78vw, 1150px); z-index: -2; pointer-events: none; }
 .hero-roof img { display: block; width: 100%; height: auto; }
 .hero-roof .roof-base { opacity: .55; animation: roofBase 11s infinite; }
 .hero-roof .roof-flash { position: absolute; inset: 0; opacity: 0; animation: roofFlash 11s infinite; }
 @keyframes roofBase { 0%, 92.5%, 94.6%, 100% { filter: saturate(.7) brightness(.8); } 93% { filter: saturate(1) brightness(1.6); } 94% { filter: saturate(.9) brightness(1.2); } }
 @keyframes roofFlash { 0%, 92.5%, 94.8%, 100% { opacity: 0; } 93% { opacity: .35; } 94% { opacity: .12; } }
 @media (max-width: 900px) { .hero-roof { width: 100%; opacity: .8; } }
+/* frosted backdrop on the outlined hero button so it stays legible over the roofs */
+.hero-actions .btn-ghost { background: rgba(10,15,11,.45); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.hero-actions .btn-ghost:hover { background: rgba(10,15,11,.6); }
 /* big hip roof seen from below: sits behind the rain, ridge lights up on the same 11s lightning cycle */
 
 .hero-grid { display: grid; grid-template-columns: 1.3fr .8fr; gap: 40px; align-items: end; }
