@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css?v=25">
-  <link rel="stylesheet" href="css/base.css?v=25">
-  <link rel="stylesheet" href="css/theme.css?v=25">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css?v=26">
+  <link rel="stylesheet" href="css/base.css?v=26">
+  <link rel="stylesheet" href="css/theme.css?v=26">
   <meta property="og:title" content="JEM Roofing Co. — Wilmington, NC">
   <meta property="og:description" content="Family-owned. Licensed & insured. 30+ years of experience. Free quotes.">
   <meta property="og:type" content="website">
@@ -55,19 +55,13 @@
 <section class="hero">
   <div class="photo"><img src="assets/img/hero.jpg" alt="" loading="eager"></div>
   <div class="hero-veil"></div>
-  <svg class="hero-roof" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-    <!-- one big roof from the gable end: front slope up to the peak, ridge running off right. Two tones, no seams. -->
-    <defs>
-      <linearGradient id="roofFront" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0e1811"/><stop offset=".55" stop-color="#1a2b1e"/><stop offset="1" stop-color="#0d1610"/></linearGradient>
-      <pattern id="courses" width="70" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(-46)"><path d="M0 27.5 H70" stroke="rgba(255,255,255,.055)" stroke-width="1"/></pattern>
-    </defs>
+  <svg class="hero-roof" viewBox="0 0 2000 700" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <!-- wide gable roofline with chimney (thick stroke silhouette); lights up with the lightning -->
     <g class="fill">
-      <path d="M270 900 L1040 120 L1600 120 L1600 900 Z" fill="url(#roofFront)"/>
-      <path d="M270 900 L1040 120 L1040 900 Z" fill="url(#courses)"/>
+      <path d="M0 610 L1000 70 L1420 300 L1420 145 L1590 145 L1590 390 L2000 610 L2000 680 L1560 440 L1560 205 L1450 205 L1450 335 L1000 140 L40 680 Z"/>
     </g>
-
     <g class="edge" fill="none" stroke-linejoin="round" stroke-linecap="round">
-      <path d="M270 900 L1040 120 L1600 120"/>
+      <path d="M0 610 L1000 70 L1420 300 L1420 145 L1590 145 L1590 390 L2000 610"/>
     </g>
   </svg>
   <div class="rain" aria-hidden="true"></div>
@@ -382,7 +376,7 @@
 
 
 <script src="assets/vendor/leaflet/leaflet.js"></script>
-<script src="js/main.js?v=25"></script>
-<script src="js/map.js?v=25"></script>
+<script src="js/main.js?v=26"></script>
+<script src="js/map.js?v=26"></script>
 </body>
 </html>
