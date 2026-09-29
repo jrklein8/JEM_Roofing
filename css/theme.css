@@ -31,14 +31,14 @@ body { background: var(--dark-900); color: #fff; }
 .lightning { position: absolute; inset: 0; z-index: -1; background: #fff; opacity: 0; pointer-events: none; animation: flash 11s infinite; }
 @keyframes flash { 0%, 92.5%, 93.5%, 94.2%, 100% { opacity: 0; } 93% { opacity: .18; } 94% { opacity: .08; } }
 /* rooftop silhouette: sits behind the copy, edges light up on the same 11s lightning cycle */
-.hero-roof { position: absolute; right: 0; bottom: 0; width: min(80vw, 1300px); height: auto; z-index: -2; pointer-events: none; }
+.hero-roof { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 28vh; max-height: 300px; z-index: -2; pointer-events: none; }
 .hero-roof .fill { fill: #101a13; animation: roofFill 11s infinite; }
 .hero-roof .edge { stroke: rgba(255,255,255,.22); stroke-width: 2; animation: roofEdge 11s infinite; }
 @keyframes roofFill { 0%, 92.5%, 94.6%, 100% { fill: #101a13; } 93% { fill: #223526; } 94% { fill: #17241b; } }
 @keyframes roofEdge { 0%, 92.5%, 94.8%, 100% { stroke: rgba(255,255,255,.22); stroke-width: 2; filter: none; }
   93% { stroke: rgba(255,255,255,.95); stroke-width: 3; filter: drop-shadow(0 0 10px rgba(255,255,255,.7)); }
   94% { stroke: rgba(200,235,205,.6); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(120,220,140,.5)); } }
-@media (max-width: 900px) { .hero-roof { width: 120vw; opacity: .8; } }
+@media (max-width: 900px) { .hero-roof { height: 120px; opacity: .8; } }
 
 .hero-grid { display: grid; grid-template-columns: 1.3fr .8fr; gap: 40px; align-items: end; }
 .hero-badge {
