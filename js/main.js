@@ -45,6 +45,17 @@
     setTimeout(show, 4000);
   } else if (side) { side.classList.add('is-in'); }
 
+  /* lightning: one-shot strike at a random 3–10s interval */
+  const heroEl = $('.hero');
+  if (heroEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const strike = () => {
+      heroEl.classList.remove('is-flashing'); void heroEl.offsetWidth; heroEl.classList.add('is-flashing');
+      setTimeout(() => heroEl.classList.remove('is-flashing'), 1200);
+      setTimeout(strike, 3000 + Math.random() * 7000);
+    };
+    setTimeout(strike, 2500 + Math.random() * 3000);
+  }
+
   /* photo slots: detect missing images, keep the styled fallback */
   $$('.photo img').forEach(img => {
     const box = img.closest('.photo');
