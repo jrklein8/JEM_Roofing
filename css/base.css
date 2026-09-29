@@ -177,7 +177,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,.4); }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,.1); box-shadow: 0 0 0 4px rgba(46,139,62,.18); }
-.field textarea { min-height: 130px; resize: vertical; }
+.field textarea { min-height: 84px; resize: vertical; }
 .form-fields > .btn { margin-top: 12px; justify-self: start; }
 .form-note { font-size: 13px; opacity: .6; margin-top: 4px; }
 .form-success { display: none; padding: 20px; border-radius: var(--radius-sm); background: rgba(52,199,89,.15); border: 1px solid rgba(52,199,89,.5); }
