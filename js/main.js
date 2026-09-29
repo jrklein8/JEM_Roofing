@@ -45,19 +45,15 @@
     setTimeout(show, 4000);
   } else if (side) { side.classList.add('is-in'); }
 
-  /* lightning: the first two strikes are scripted to light the headline, then strikes go random (3–10s) */
+  /* lightning: random strikes every 3–10s */
   const heroEl = $('.hero');
-  const lines = $$('.hero h1 .line');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const flash = () => { if (reduced) return; heroEl.classList.remove('is-flashing'); void heroEl.offsetWidth; heroEl.classList.add('is-flashing'); setTimeout(() => heroEl.classList.remove('is-flashing'), 1200); };
-  if (heroEl) {
-    if (reduced) { lines.forEach(l => l.classList.add('is-lit')); }
-    else {
-      setTimeout(() => { flash(); lines[0].classList.add('is-lit'); lines[1] && setTimeout(() => lines[1].classList.add('is-lit'), 300); }, 400);   /* strike 1: ROOFS BUILT FOR / CAROLINA WEATHER */
-      setTimeout(() => { flash(); lines[2] && lines[2].classList.add('is-lit'); }, 1850);                                                       /* strike 2: DONE RIGHT */
-      const strike = () => { flash(); setTimeout(strike, 3000 + Math.random() * 7000); };
-      setTimeout(strike, 1850 + 4000 + Math.random() * 4000);
-    }
+  if (heroEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const strike = () => {
+      heroEl.classList.remove('is-flashing'); void heroEl.offsetWidth; heroEl.classList.add('is-flashing');
+      setTimeout(() => heroEl.classList.remove('is-flashing'), 1200);
+      setTimeout(strike, 3000 + Math.random() * 7000);
+    };
+    setTimeout(strike, 2500 + Math.random() * 3000);
   }
 
   /* photo slots: detect missing images, keep the styled fallback */
