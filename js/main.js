@@ -37,6 +37,14 @@
     }));
   }
 
+  /* mobile hero cards: fly in on first scroll/touch, or after 4s */
+  const side = $('.hero-side');
+  if (side && window.matchMedia('(max-width: 900px)').matches) {
+    const show = () => { side.classList.add('is-in'); ['scroll','touchstart','wheel','keydown'].forEach(e => window.removeEventListener(e, show)); };
+    ['scroll','touchstart','wheel','keydown'].forEach(e => window.addEventListener(e, show, { passive: true, once: true }));
+    setTimeout(show, 4000);
+  } else if (side) { side.classList.add('is-in'); }
+
   /* photo slots: detect missing images, keep the styled fallback */
   $$('.photo img').forEach(img => {
     const box = img.closest('.photo');

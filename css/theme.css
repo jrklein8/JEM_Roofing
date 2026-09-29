@@ -329,9 +329,18 @@ body { background: var(--dark-900); color: #fff; }
   .hero-roof { width: 150%; opacity: .85; }
   .hero-roof.is-pinned { position: fixed; bottom: 0; }   /* rides the bottom of the screen until the hero ends */
 }
-@media (max-width: 560px) { .hero-roof { width: 210%; } .hero { padding-bottom: 190px; } }
+@media (max-width: 560px) { .hero-roof { width: 210%; } }
 @media (max-width: 900px) {
   .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .hero-actions .btn { padding: 16px 10px; font-size: 14px; letter-spacing: 0; }
-  .hero-side { margin-top: 260px; }                    /* leaves the pinned roofs clear on first load */
+  /* cards start hidden below the fold and rise in on first scroll/touch or after a few seconds */
+  .hero-side { margin-top: 24px; }
+  .hero-side .hero-card { transform: translateY(140vh); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+  .hero-side .hero-card:nth-child(2) { transition-delay: .12s; }
+  .hero-side.is-in .hero-card { transform: none; }
+  .hero-side.is-in .hero-card:first-child { animation: cardNudge .9s cubic-bezier(.2,.8,.2,1); }
+  .hero { padding-bottom: 210px; }
+  @media (prefers-reduced-motion: reduce) { .hero-side .hero-card { transform: none; transition: none; } }
 }
+
+@keyframes cardNudge { 0% { transform: translateY(140vh); } 100% { transform: none; } }
