@@ -190,7 +190,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer h4 { color: #fff; font-family: var(--font-display); font-size: 20px; letter-spacing: .08em; margin-bottom: 16px; }
 .footer li { margin-bottom: 10px; }
 .footer a:hover { color: #fff; }
-.footer-brand img { height: 96px; width: auto; margin-bottom: 18px; }
+.footer-brand { text-align: center; }
+.footer-brand img { height: 96px; width: auto; margin: 0 auto 18px; }
+.footer-brand p { margin: 0 auto; max-width: 34ch; }
 .footer-bottom .credit a { color: #fff; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,.3); }
 .footer-bottom .credit a:hover { border-bottom-color: #fff; }
 .footer-bottom { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; opacity: .6; }
