@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css?v=27">
-  <link rel="stylesheet" href="css/base.css?v=27">
-  <link rel="stylesheet" href="css/theme.css?v=27">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css?v=28">
+  <link rel="stylesheet" href="css/base.css?v=28">
+  <link rel="stylesheet" href="css/theme.css?v=28">
   <meta property="og:title" content="JEM Roofing Co. — Wilmington, NC">
   <meta property="og:description" content="Family-owned. Licensed & insured. 30+ years of experience. Free quotes.">
   <meta property="og:type" content="website">
@@ -55,15 +55,10 @@
 <section class="hero">
   <div class="photo"><img src="assets/img/hero.jpg" alt="" loading="eager"></div>
   <div class="hero-veil"></div>
-  <svg class="hero-roof" viewBox="0 0 2000 700" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-    <!-- wide gable roofline with chimney (thick stroke silhouette); lights up with the lightning -->
-    <g class="fill">
-      <path d="M0 610 L1000 70 L1420 300 L1420 145 L1590 145 L1590 390 L2000 610 L2000 680 L1560 440 L1560 205 L1450 205 L1450 335 L1000 140 L40 680 Z"/>
-    </g>
-    <g class="edge" fill="none" stroke-linejoin="round" stroke-linecap="round">
-      <path d="M0 610 L1000 70 L1420 300 L1420 145 L1590 145 L1590 390 L2000 610"/>
-    </g>
-  </svg>
+  <div class="hero-roof" aria-hidden="true">
+    <img class="roof-base" src="assets/img/logo-roofs.png" alt="">
+    <img class="roof-flash" src="assets/img/logo-roofs-white.png" alt="">
+  </div>
   <div class="rain" aria-hidden="true"></div>
   <div class="lightning" aria-hidden="true"></div>
   <div class="container hero-grid">
@@ -376,7 +371,7 @@
 
 
 <script src="assets/vendor/leaflet/leaflet.js"></script>
-<script src="js/main.js?v=27"></script>
-<script src="js/map.js?v=27"></script>
+<script src="js/main.js?v=28"></script>
+<script src="js/map.js?v=28"></script>
 </body>
 </html>
