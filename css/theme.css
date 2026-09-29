@@ -331,4 +331,10 @@ body { background: var(--dark-900); color: #fff; }
   .hero-roof { width: 150%; opacity: .85; }
   .hero-roof.is-pinned { position: fixed; bottom: 0; }   /* rides the bottom of the screen until the hero ends */
 }
-@media (max-width: 560px) { .hero-roof { width: 190%; } .hero { padding-bottom: 170px; } }
+@media (max-width: 560px) { .hero-roof { width: 210%; } .hero { padding-bottom: 190px; } }
+@media (max-width: 900px) {
+  .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hero-actions .btn { padding: 16px 10px; font-size: 14px; letter-spacing: 0; }
+  .hero-actions .btn svg { display: none; }
+  .hero-side { margin-top: 260px; }                    /* leaves the pinned roofs clear on first load */
+}
