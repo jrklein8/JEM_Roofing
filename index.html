@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css?v=24">
-  <link rel="stylesheet" href="css/base.css?v=24">
-  <link rel="stylesheet" href="css/theme.css?v=24">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css?v=25">
+  <link rel="stylesheet" href="css/base.css?v=25">
+  <link rel="stylesheet" href="css/theme.css?v=25">
   <meta property="og:title" content="JEM Roofing Co. — Wilmington, NC">
   <meta property="og:description" content="Family-owned. Licensed & insured. 30+ years of experience. Free quotes.">
   <meta property="og:type" content="website">
@@ -55,30 +55,19 @@
 <section class="hero">
   <div class="photo"><img src="assets/img/hero.jpg" alt="" loading="eager"></div>
   <div class="hero-veil"></div>
-  <svg class="hero-roof" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <!-- one big roof seen from below at the gable end: front slope (left), hip face (right), ridge running off to the right edge -->
+  <svg class="hero-roof" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <!-- one big roof from the gable end: front slope up to the peak, ridge running off right. Two tones, no seams. -->
     <defs>
-      <linearGradient id="roofFront" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0f1912"/><stop offset="1" stop-color="#1c2d20"/></linearGradient>
-      <linearGradient id="roofSide" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#121e15"/><stop offset="1" stop-color="#0a110c"/></linearGradient>
-      <linearGradient id="roofTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22362a"/><stop offset="1" stop-color="#15241a"/></linearGradient>
-      <pattern id="coursesL" width="64" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-49)"><path d="M0 25.5 H64" stroke="rgba(255,255,255,.06)" stroke-width="1"/><path d="M32 0 V25" stroke="rgba(255,255,255,.03)" stroke-width="1"/></pattern>
-      <pattern id="coursesR" width="64" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(58)"><path d="M0 25.5 H64" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern>
-      <pattern id="coursesT" width="64" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)"><path d="M0 29.5 H64" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern>
+      <linearGradient id="roofFront" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0e1811"/><stop offset=".55" stop-color="#1a2b1e"/><stop offset="1" stop-color="#0d1610"/></linearGradient>
+      <pattern id="courses" width="70" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(-46)"><path d="M0 27.5 H70" stroke="rgba(255,255,255,.055)" stroke-width="1"/></pattern>
     </defs>
     <g class="fill">
-      <!-- front slope -->
-      <path d="M270 900 L1040 120 L1040 900 Z" fill="url(#roofFront)"/>
-      <path d="M270 900 L1040 120 L1040 900 Z" fill="url(#coursesL)"/>
-      <!-- top plane between ridge and hip edge -->
-      <path d="M1040 120 L1600 120 L1600 900 L1040 900 Z" fill="url(#roofTop)"/>
-      <path d="M1040 120 L1600 120 L1600 900 L1040 900 Z" fill="url(#coursesT)"/>
-      <!-- hip face below the hip edge -->
-      <path d="M1040 120 L1560 900 L1040 900 Z" fill="url(#roofSide)"/>
-      <path d="M1040 120 L1560 900 L1040 900 Z" fill="url(#coursesR)"/>
+      <path d="M270 900 L1040 120 L1600 120 L1600 900 Z" fill="url(#roofFront)"/>
+      <path d="M270 900 L1040 120 L1040 900 Z" fill="url(#courses)"/>
     </g>
+
     <g class="edge" fill="none" stroke-linejoin="round" stroke-linecap="round">
       <path d="M270 900 L1040 120 L1600 120"/>
-      <path d="M1040 120 L1560 900" class="hip"/>
     </g>
   </svg>
   <div class="rain" aria-hidden="true"></div>
@@ -393,7 +382,7 @@
 
 
 <script src="assets/vendor/leaflet/leaflet.js"></script>
-<script src="js/main.js?v=24"></script>
-<script src="js/map.js?v=24"></script>
+<script src="js/main.js?v=25"></script>
+<script src="js/map.js?v=25"></script>
 </body>
 </html>
