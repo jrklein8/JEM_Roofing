@@ -45,16 +45,16 @@
     setTimeout(show, 4000);
   } else if (side) { side.classList.add('is-in'); }
 
-  /* lightning: random strikes every 3–10s */
+  /* lightning: one scripted strike lights DONE RIGHT at 1.85s, then strikes go random (3–10s) */
   const heroEl = $('.hero');
-  if (heroEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const strike = () => {
-      heroEl.classList.remove('is-flashing'); void heroEl.offsetWidth; heroEl.classList.add('is-flashing');
-      setTimeout(() => heroEl.classList.remove('is-flashing'), 1200);
-      setTimeout(strike, 3000 + Math.random() * 7000);
-    };
-    setTimeout(strike, 2500 + Math.random() * 3000);
-  }
+  const strikeLine = $('.hero h1 .line.strike');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroEl && !reduced) {
+    const flash = () => { heroEl.classList.remove('is-flashing'); void heroEl.offsetWidth; heroEl.classList.add('is-flashing'); setTimeout(() => heroEl.classList.remove('is-flashing'), 1200); };
+    setTimeout(() => { flash(); strikeLine && strikeLine.classList.add('is-lit'); }, 1850);
+    const strike = () => { flash(); setTimeout(strike, 3000 + Math.random() * 7000); };
+    setTimeout(strike, 1850 + 4000 + Math.random() * 4000);
+  } else if (strikeLine) { strikeLine.classList.add('is-lit'); }
 
   /* photo slots: detect missing images, keep the styled fallback */
   $$('.photo img').forEach(img => {
