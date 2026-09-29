@@ -34,7 +34,7 @@ body { background: var(--dark-900); color: #fff; }
 .hero-roof { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: min(78vw, 1150px); z-index: -2; pointer-events: none; }
 .hero-roof img { display: block; width: 100%; height: auto; }
 .hero-roof .roof-base { opacity: .55; animation: roofBase 11s infinite; }
-.hero-roof .roof-flash { position: absolute; inset: 0; opacity: 0; animation: roofFlash 11s infinite; }
+.hero-roof .roof-flash { position: absolute; inset: 0; opacity: 0; filter: brightness(0) invert(1); animation: roofFlash 11s infinite; }
 @keyframes roofBase { 0%, 92.5%, 94.6%, 100% { filter: saturate(.7) brightness(.8); } 93% { filter: saturate(1) brightness(1.6); } 94% { filter: saturate(.9) brightness(1.2); } }
 @keyframes roofFlash { 0%, 92.5%, 94.8%, 100% { opacity: 0; } 93% { opacity: .35; } 94% { opacity: .12; } }
 @media (max-width: 900px) { .hero-roof { width: 100%; opacity: .8; } }
